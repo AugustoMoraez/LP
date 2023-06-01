@@ -17,10 +17,18 @@ button,a{
     border:0;
     outline: none;
     transition: 0.5s;
+    text-decoration: none;
 }
 p{
     color:#515151;
 }
+ul,li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
 
 
 `;
