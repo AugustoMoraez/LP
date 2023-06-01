@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height:59px;
+    
     background-color: #EEEEEE;
     padding: 8px 64px;
     display: flex;
@@ -29,5 +29,10 @@ export const Container = styled.div`
         ul .ativo{
            color:rgb(1, 135, 98);
         }
+        @media (max-width:650px) {
+            display: none;
+        }
     }
+    
+    
 `;

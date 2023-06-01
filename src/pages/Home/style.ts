@@ -9,6 +9,7 @@ export const Container = styled.div `
     display: flex;
     justify-content: space-between;
     align-items: center;
+ 
     .conteudo{
         width: 100%;
         max-width: 540px;
@@ -18,6 +19,7 @@ export const Container = styled.div `
         h2{
             font-size: 48px;
             margin-top: -140px;
+           
             
         }
         p{
@@ -26,34 +28,37 @@ export const Container = styled.div `
         }
         .btns{
             display: flex;
-            -webkit-box-pack: justify;
             justify-content: space-between;
-            -webkit-box-align: center;
             align-items: center;
-            padding-top: 3rem;
+            padding-top: 20px;
+            width: 100%;
             max-width: 453px;
-            a{
-                flex: 1;
-                padding:10px 44px;
-                font-size: 18px;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
-                cursor: pointer;
+            text-align: center;
+            .button{
+               
+                width: 100%;
+                margin: 5px;
+                padding: 14px 44px;
+                border: 3px solid #018762;
+                border-radius:10px;
+                color: #fff;
+                background-color: #018762;
+                box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
                 &:hover{
-                    opacity: 0.6;
+                    opacity: 0.8;
+                    cursor: pointer;
+                }
+                a{
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
                 }
             }
-            a:first-child{
-                margin-right: 5px;
-                background-color: rgb(1, 135, 98);
-                color: rgb(255, 255, 255);
-                border: 2px solid rgb(1, 135, 98);
-            }
-            a:last-child{
-                margin-left: 5px;
-                color: rgb(1, 135, 98);
-                background-color: rgb(255, 255, 255);
-                border: 2px solid rgb(1, 135, 98);
+            .button:last-child{
+                background-color: #fff;
+                a{
+                    color:#018762;
+                }
             }
         }
         
@@ -71,6 +76,7 @@ export const Container = styled.div `
     }
     @media (max-width:1040px) {
         flex-direction: column;
+       
         .conteudo{
             h2{
                 margin-top: 0px;
@@ -81,22 +87,17 @@ export const Container = styled.div `
             }
         }
         .btns{
-            a{
-                padding: 10px 44px ;
+            flex-direction: column;
+            .button{
+                margin: auto;
             }
         }
     }
     @media (max-width:540px) {
         .btns{
             flex-direction: column;
-            a{
-                margin: 0;
-                padding: 7px;
-                margin-top: 10px;
-            }
-            a:last-child{
-               width:211px;
-            }
+            
+            
         }            
     }
 

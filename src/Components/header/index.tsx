@@ -5,15 +5,17 @@ import { Link } from "react-router-dom";
 
 type Prop = {
     Icones:Icone[],
-    func:(e:any)=>void
+    func:(e:any)=>void,
+    
 }
 
 export const Header = ({Icones,func}:Prop) => {
     return(
         <Container>
             <div className="Logo">
-                <Link to="/">Lacrei</Link>
+                <Link onClick={()=>func("Home")} to="/">Lacrei</Link>
             </div>
+            {/*Desktop Menu*/}
             <nav>
                 <ul>
                     {Icones.map((item,index)=>(
@@ -28,6 +30,8 @@ export const Header = ({Icones,func}:Prop) => {
                     ))}
                 </ul>
             </nav>
+            
+           
         </Container>
     )
 }

@@ -4,15 +4,19 @@ import { Icone } from "./types/Icones";
 import { useState } from "react";
 //Components
 import { Header } from "./Components/header";
+import { Footer } from "./Components/footer";
+import { MenuOptions } from "./Components/mobile/menu";
 //rotas
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Profissional } from "./pages/Profissional";
 import { PessoaUsuaria } from "./pages/PessoaUsuaria";
+import { IconeMenu } from "./Components/mobile/icon";
 
 
 function App() {
   //State que alterna qual icone esta ativo no menu e no footer
+  const[toggleMenu,setToggleMenu] = useState(false)
   const[iconeAtivo,setIconeAtivo] = useState<Icone[]>([
     {IconeNome:"Home",ativo:true,rota:"/"},
     {IconeNome:"Pessoa Usuária",ativo:false,rota:"pessoa-usuaria"},
@@ -49,22 +53,26 @@ function App() {
   const ItemMenu = (e:any) => {
     const element  = e.target as HTMLAnchorElement
     SelectItemMenu(element.textContent as string);
+    setToggleMenu(!toggleMenu)
   }
 
 
 
   return (
    <div>
-    {/*header*/}
-    {/*rotas*/}
+    {/*pc*/}
     <Header func={ItemMenu} Icones={iconeAtivo}/>
+    {/*mobile*/}
+    <IconeMenu  boolean={toggleMenu} click={()=>{setToggleMenu(!toggleMenu)}}/>
+    <MenuOptions click={(e)=>{ItemMenu(e)}} toggle={toggleMenu} Icones={iconeAtivo}/>
+
     <Routes>
       <Route path="/" element={<Home func={ItemMenu}/>}  />
       <Route path="/pessoa-usuaria" element={<PessoaUsuaria/>}  />
       <Route path="/profissional" element={<Profissional/>}  />
     </Routes>
-    {/*footer*/}
 
+    <Footer func={ItemMenu} Icones={iconeAtivo}/>
 
    </div>
   )
