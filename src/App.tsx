@@ -53,7 +53,7 @@ function App() {
   const ItemMenu = (e:any) => {
     const element  = e.target as HTMLAnchorElement
     SelectItemMenu(element.textContent as string);
-    setToggleMenu(!toggleMenu)
+    setToggleMenu(false);
   }
 
 

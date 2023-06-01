@@ -13,11 +13,11 @@ export const Home = ({func}:Prop) => {
                 <h2>Boas vindas a Lacrei Saúde</h2>
                 <p>Uma plataforma segura e acolhedora para comunidade LGBTQIAPN+</p>
                 <div className="btns">
-                    <div className="button">
-                        <Link to="/pessoa-usuaria">Pessoa Usuária</Link>
+                    <div className="button" >
+                        <Link onClick={func} to="/pessoa-usuaria">Pessoa Usuária</Link>
                     </div>
                     <div className="button">
-                        <Link to="/profissional">Profissional</Link>
+                        <Link  onClick={func} to="/profissional">Profissional</Link>
                     </div>
                 </div>
             </div>

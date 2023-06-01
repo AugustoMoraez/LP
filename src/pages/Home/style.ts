@@ -11,20 +11,17 @@ export const Container = styled.div `
     align-items: center;
  
     .conteudo{
-        width: 100%;
-        max-width: 540px;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: column;
+        
         h2{
             font-size: 48px;
             margin-top: -140px;
-           
+            
             
         }
         p{
             font-size: 24px;
             margin-top: 32px;
+            
         }
         .btns{
             display: flex;
